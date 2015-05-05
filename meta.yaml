@@ -1,0 +1,28 @@
+{%set build = 0 %}
+{%set version = "0.4.6" %}
+
+package:
+  name: msgpack-python
+  version: {{version}}
+
+about:
+  home: http://msgpack.org
+  license: Apache Software License
+  summary: "MessagePack (de)serializer."
+
+source:
+  fn: msgpack-python-{{version}}.tar.gz
+  url: https://pypi.python.org/packages/source/m/msgpack-python/msgpack-python-{{version}}.tar.gz
+  md5: 8b317669314cf1bc881716cccdaccb30
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+build:
+  number: {{build}}
+  script: python setup.py install
